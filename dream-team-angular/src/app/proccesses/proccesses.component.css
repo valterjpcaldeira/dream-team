@@ -10,7 +10,7 @@
 }
 
 .test {
-    background-color: #343a40!important;
+    background-color: #FFF1D0!important;
 }
 
 .table .thead-dark th {
@@ -23,6 +23,10 @@ tr{
   color: #000;
 }
 
+.text-blue {
+  color: #235789!important;
+}
+
 .progress-bar {
     align-items: center;
     color: #212529;
@@ -31,7 +35,6 @@ tr{
 
 .pb-3, .py-3 {
     padding-bottom: 1rem!important;
-    margin-bottom: 3%;
 }
 
 .progress {

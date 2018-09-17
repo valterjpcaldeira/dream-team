@@ -1,6 +1,7 @@
 import { Proccess } from './proccess';
 
 export const PROCS: Proccess[] = [
-  { id: 11, name: 'Mr. Nice', state: true, number:10, message:'' , total: 11 },
-  { id: 12, name: 'Narco' , state: false, number:30, message:'' , total: 1000}
+  { codigo: '727', state: 1, origem:'Benfica', destino:'Alvalade'},
+  { codigo: '345', state: 3, origem:'Alverca', destino:'Amadora'},
+  { codigo: '711', state: 2, origem:'Sete Rios', destino:'Expo'}
 ];

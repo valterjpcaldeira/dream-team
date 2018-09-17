@@ -19,12 +19,12 @@ export class ProccessService {
   proccesses = PROCS;
 
   getProccesses(): Observable<Proccess[]> {
-    //return of(PROCS);
+    return of(PROCS);
 
-    return this.http.get<Proccess[]>(this.tasksUrl)
+    /*return this.http.get<Proccess[]>(this.tasksUrl)
     .pipe(
       catchError(this.handleError('getProccesses', []))
-    );
+    );*/
 
   }
 
