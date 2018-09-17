@@ -1,0 +1,44 @@
+
+<div id="loader-div" class="test bg-dark text-center text-white overflow-hidden width100">
+  <div class=" py-3">
+    <div class="mr1 ml1 row my-3">
+        <div class="col-md-4 mt3">
+        </div>
+        <div class="col-md-4 mt3" style="    height: 61px;">
+          <h2 class="display5">Proccess Table</h2>
+        </div>
+        <div class="col-md-4 mt3">
+        </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Proccess</th>
+        <th scope="col">State</th>
+        <th scope="col">Percentage Completed</th>
+        <th scope="col" style="width: 25%;" >Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proc of proccesses">
+        <th scope="row">{{ proc.id }}</th>
+        <td>{{ proc.name }}</td>
+        <td *ngIf="proc.state == true" ><i class="fa fa-circle-o-notch fa-spin" style="font-size:24px;color:green"></i></td>
+        <td *ngIf="proc.state != true" >
+          <i *ngIf="proc.message.length < 10" class="fa fa-pause-circle" style="font-size:24px;color:#0f2058"></i>
+          <i *ngIf="proc.message.length >= 10" class="fa fa-exclamation-triangle" style="font-size:24px;color:#b12737"></i>
+        </td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" [style.width.%]="((proc.number * 100)/proc.total).toFixed(2)" [attr.aria-valuenow]="((proc.number * 100)/proc.total).toFixed(2)" aria-valuemin="0" aria-valuemax="100">{{ ((proc.number * 100)/proc.total).toFixed(2) }}%</div>
+          </div>
+        </td>
+        <td>
+          {{ proc.message }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

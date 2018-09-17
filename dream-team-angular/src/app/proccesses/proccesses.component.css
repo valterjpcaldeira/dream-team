@@ -1,0 +1,39 @@
+
+.table{
+      margin-right: 2%;
+      background-color: #dae0e5;
+      width: 96%;
+      margin-left: 2%;
+}
+.test{
+    height: 100vh /* force the BODY element to match the height of the HTML element */
+}
+
+.test {
+    background-color: #343a40!important;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #19BAF2!important;
+    border-color: #19BAF2!important;
+}
+
+tr{
+  color: #000;
+}
+
+.progress-bar {
+    align-items: center;
+    color: #212529;
+    background-color: #19baf2;
+}
+
+.pb-3, .py-3 {
+    padding-bottom: 1rem!important;
+    margin-bottom: 3%;
+}
+
+.progress {
+    overflow: visible;
+}

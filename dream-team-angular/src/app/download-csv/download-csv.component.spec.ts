@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BusListComponent } from './bus-list.component';
+import { DownloadCsvComponent } from './download-csv.component';
 
-describe('BusListComponent', () => {
-  let component: BusListComponent;
-  let fixture: ComponentFixture<BusListComponent>;
+describe('DownloadCsvComponent', () => {
+  let component: DownloadCsvComponent;
+  let fixture: ComponentFixture<DownloadCsvComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BusListComponent ]
+      declarations: [ DownloadCsvComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BusListComponent);
+    fixture = TestBed.createComponent(DownloadCsvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

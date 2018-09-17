@@ -1,0 +1,186 @@
+<div class="bg-dark d-md-flex flex-md-equal w-100" style="margin:0;">
+    <div class="bg-dark text-center text-white overflow-hidden width100 animate-bottom" style="display:none; height: 100%;" id="myDiv">
+      <div class="my-3 py-3">
+      </div>
+      <div class="autoheight bg-light box-shadow mx-auto" style="width: 80%; border-radius: 21px 21px 21px 21px;">
+        <div class="mr1 ml1 row my-3">
+          <div class="col-md-6 mt3">
+            <h2 class="display-5 mycolor">Business URL Searched</h2>
+          </div>
+          <div class="col-md-6 mt3">
+            <h2 class="display-5 mycolor">Business Info Searched</h2>
+          </div>
+        </div>
+        <div class="mr1 ml1 row my-3">
+      <div class="col-md-6">
+        <div class="card mb-4 box-shadow" id="first-card" style=" display:none;  height: 95%;">
+          <div class="card-body">
+            <div class="mr1 ml1 row my-3">
+              <div class="col-md-6 mt3">
+                <div class="col-md-3 col-sm-6 div-with-circle">
+                    <round-progress [color]="'#19bbf2'" [current]="(data.num_processed * 100)/data.total" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+                    <h2 class="circle_title" style="color: #19bbf2;font-size: 2rem;" >{{((data.num_processed * 100)/data.total).toFixed(2)}}%</h2>
+                </div>
+              </div>
+              <div class="col-md-6 mt3">
+                <div class="jumbotron" style="height: 100%; padding: 21%;">
+                  <h2 style="color: #4588ce;">Already Searched: </h2>
+                  <h1 style="font-size: 2.5rem;" class="display-4">{{data.num_processed}}</h1>
+                </div>
+              </div>
+            </div>
+            <div class="mr1 ml1 row my-3">
+              <div class="col-md-6 mt3">
+                <div class="jumbotron" style="height: 100%; padding: 21%;">
+                  <div style='vertical-align: middle;'>
+                    <h2 style="color: #29a745;">Valid Url: </h2>
+                    <h1 style="font-size: 2.5rem; color: #69c17c" class="display-4">{{data.valid_url}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mt3">
+                <div class="col-md-3 col-sm-6 div-with-circle">
+                  <round-progress [color]="'#69c17c'" [current]="(data.valid_url * 100)/data.num_processed" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+                  <h2 class="circle_title" style="color: #69c17c; font-size: 2rem;" >{{((data.valid_url * 100)/data.num_processed).toFixed(0)}}%</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 box-shadow" id="second-card-load" style="display: block;height: 95%;">
+          <div class="card-body">
+            <div class="mr1 ml1 row my-3">
+              <div class="col-md-12 mt3">
+                <div class="">
+                  <div id="loader2" ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow" id="second-card" style=" display:none;">
+          <div class="card-body">
+            <div class="mr1 ml1 row my-3">
+              <div class="col-md-6 mt3">
+                <div class="col-md-3 col-sm-6 div-with-circle">
+                    <round-progress [color]="'#19baf2'" [current]="(data2.num_info_processed * 100)/data2.num_processed" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+                    <h2 class="circle_title" style="color: #45ccce;     font-size: 2rem;" >{{((data2.num_info_processed * 100)/data2.num_processed).toFixed(2)}}%</h2>
+                </div>
+              </div>
+              <div class="col-md-6 mt3">
+                <div class="jumbotron" style="height: 100%; padding: 21%;">
+                  <h2 style="color: #4588ce;">Already Processed: </h2>
+                  <h1 style="font-size: 2.5rem;" class="display-4">{{data2.num_info_processed}}</h1>
+                </div>
+              </div>
+            </div>
+            <div class="mr1 ml1 row my-3">
+              <div class="col-md-4 mt3">
+                <div class="jumbotron" style="height: 100%; padding: 21%;">
+                  <div style='vertical-align: middle;'>
+                    <h2 style="color: #29a745;">Address:</h2>
+                    <h1 style="font-size: 2.5rem; color: #69c17c" class="display-4">{{data2.num_address}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 mt3">
+                <div class="div-with-circle">
+                  <round-progress [color]="'#69c17c'" [current]="(data2.num_address * 100)/data2.num_info_processed" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+                  <h2 class="circle_title" style="color: #69c17c;" >{{((data2.num_address * 100)/data2.num_info_processed).toFixed(0)}}%</h2>
+                </div>
+              </div>
+              <div class="col-md-4 mt3">
+                <div class="jumbotron" style="height: 100%; padding: 21%;">
+                  <div style='vertical-align: middle;'>
+                    <h2 style="color: #a7298b;">CRN:</h2>
+                    <h1 style="font-size: 2.5rem; color: #d394c5" class="display-4">{{data2.num_crn}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 mt3">
+                <div class="div-with-circle">
+                  <round-progress [color]="'#d394c5'" [current]="(data2.num_crn * 100)/data2.num_info_processed" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+                  <h2 class="circle_title" style="color: #d394c5;" >{{((data2.num_crn * 100)/data2.num_info_processed).toFixed(0)}}%</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mr1 ml1 row my-3">
+      <div class="col-md-6 mt3">
+        <h2 class="display-5 mycolor">Manual Validation</h2>
+      </div>
+      <div class="col-md-6 mt3">
+
+      </div>
+    </div>
+    <div class="mr1 ml1 row my-3">
+  <div class="col-md-6">
+    <div class="card mb-4 box-shadow" id="third-card-load" style="display: block;height: 95%;">
+      <div class="card-body">
+        <div class="mr1 ml1 row my-3">
+          <div class="col-md-12 mt3">
+            <div class="">
+              <div id="loader3" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow" id="third-card" style=" display:none;">
+      <div class="card-body">
+        <div class="mr1 ml1 row my-3">
+          <div class="col-md-6 mt3">
+            <div class="col-md-3 col-sm-6 div-with-circle">
+                <round-progress [color]="'#19baf2'" [current]="(data3.manual_validated * 100)/data3.num_info_processed" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+                <h2 class="circle_title" style="color: #45ccce;     font-size: 2rem;" >{{((data3.manual_validated * 100)/data3.num_info_processed).toFixed(2)}}%</h2>
+            </div>
+          </div>
+          <div class="col-md-6 mt3">
+            <div class="jumbotron" style="height: 100%; padding: 21%;">
+              <div style='vertical-align: middle;'>
+                <h2 style="color: #4588ce">Manual Validated:</h2>
+                <h1 style="font-size: 2.5rem; color: #28a745" class="display-4">{{data3.manual_validated}}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mr1 ml1 row my-3">
+          <div class="col-md-4 mt3">
+            <h2 style="color: #4588ce;">Accepted</h2>
+          </div>
+          <div class="col-md-2 mt3">
+            <div class="div-with-circle">
+              <round-progress [color]="'#28a745'" [current]="(data3.manual_accepted * 100)/data3.manual_validated" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+              <h2 class="circle_title" style="color: #28a745;" >{{((data3.manual_accepted * 100)/data3.manual_validated).toFixed(0)}}%</h2>
+            </div>
+          </div>
+          <div class="col-md-4 mt3">
+            <h2 style="color: #45ce8c;">Correct Guess</h2>
+          </div>
+          <div class="col-md-2 mt3">
+            <div class="div-with-circle">
+              <round-progress [color]="'#28a745'" [current]="(data3.manual_correct * 100)/data3.manual_validated" [max]="100" [animation]="'easeInOutBounce'" [animationDelay]="500" [duration]="800" [responsive]="true"></round-progress>
+              <h2 class="circle_title" style="color: #28a745;" >{{((data3.manual_correct * 100)/data3.manual_validated).toFixed(0)}}%</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
+      </div>
+      <div class="my-3 py-3">
+      </div>
+
+    </div>
+  </div>
+    <div id="loader-div" class="test bg-dark text-center text-white overflow-hidden width100">
+      <div id="loader" ></div>
+  </div>

@@ -1,0 +1,159 @@
+  <div class="bg-dark d-md-flex flex-md-equal w-100" onload="myFunction()" style="margin:0;">
+      <div class="bg-dark text-center text-white overflow-hidden width100 animate-bottom" style="display:none;" id="myDiv">
+        <div class="my-3 py-3">
+          <div class="mr1 ml1 row my-3">
+              <div class="col-md-4 mt3">
+              </div>
+              <div class="col-md-4 mt3" style="    height: 61px;">
+                <h2 class="display5">{{ businness.business_original_name }}</h2>
+                <a [attr.href]="businness.business_site_url" class="btn btn-primary btn-just-circle" target="_blank">
+                  <div style="font-size:3em;">
+                    <i class="iconred fa fa-external-link"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 mt3">
+              </div>
+          </div>
+          <button style="font-size: 28px;" class="btn btn-primary" type="button">
+            Trust <span class="badge">{{ businness.trust }}%</span>
+          </button>
+        </div>
+        <div class="autoheight bg-light box-shadow mx-auto" style="width: 80%; border-radius: 21px 21px 21px 21px;">
+          <div class="mr1 ml1 row my-3">
+            <div class="col-md-6 mt3">
+              <h2 class="display-5 mycolor">Original</h2>
+            </div>
+            <div class="col-md-6 mt3">
+              <h2 class="display-5 mycolor">Get From Site</h2>
+            </div>
+          </div>
+          <div class="mr1 ml1 row my-3">
+        <div class="col-md-6">
+          <div class="card mb-4 box-shadow">
+            <div class="card-body">
+              <table class="table table-striped tex-gray">
+                <thead>
+                  <tr>
+                    <th scope="col">Field Name</th>
+                    <th scope="col">Field Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Name</td>
+                    <td id="name">{{ businness.business_original_name }}</td>
+                  </tr>
+                  <tr>
+                    <td>Short Name</td>
+                    <td id="short_name">{{ businness.companyNameClean }}</td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td id="address">{{ businness.business_original_address }}</td>
+                  </tr>
+                  <tr>
+                    <td>PostTown</td>
+                    <td id="post_town">{{ businness.business_original_post_town }}</td>
+                  </tr>
+                  <tr>
+                    <td>CRN</td>
+                    <td id="crn">{{ businness.business_original_crn }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-4 box-shadow">
+            <div class="card-body">
+              <table class="table table-striped tex-gray">
+                <thead>
+                  <tr>
+                    <th scope="col">Field Name</th>
+                    <th scope="col">Field Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Name</td>
+                    <td id="site_name">{{ businness.business_site_name }}</td>
+                  </tr>
+                  <tr>
+                    <td>Address
+                      <i *ngIf="!businness.business_site_address.includes(businness.business_original_post_town)" class="fa fa-exclamation-triangle" style="font-size:16px;color:red"></i>
+                      <i *ngIf="businness.business_site_address.includes(businness.business_original_post_town)" class="fa fa-check-square" style="font-size:16px;color:green"></i>
+                    </td>
+                    <td id="site_address">{{ businness.business_site_address }}</td>
+                  </tr>
+                  <tr>
+                    <td>CRN
+                      <i *ngIf="businness.business_site_crn.includes(businness.business_original_crn)" class="fa fa-check-square" style="font-size:16px;color:green"></i>
+                    </td>
+                    <td id="site_crn">{{ businness.business_site_crn }}</td>
+                  </tr>
+                  <tr>
+                    <td>Summary</td>
+                    <td id="summary">{{ businness.business_site_summary }}</td>
+                  </tr>
+                  <tr>
+                    <td>Facebook</td>
+                    <td *ngIf="businness.business_site_facebook != 'NONE'" ><a [attr.href]="businness.business_site_facebook" target="_blank"><i class="fa fa-facebook-official" style="font-size:24px;color:green"></i></a></td>
+                    <td *ngIf="businness.business_site_facebook == 'NONE'" ><i class="fa fa-facebook-official" style="font-size:24px;color:red"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Instagram</td>
+                    <td *ngIf="businness.business_site_instagram != 'NONE'" ><a [attr.href]="businness.business_site_instagram" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:green"></i></a></td>
+                    <td *ngIf="businness.business_site_instagram == 'NONE'" ><i class="fa fa-instagram" style="font-size:24px;color:red"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Twitter</td>
+                    <td *ngIf="businness.business_site_twitter != 'NONE'" ><a [attr.href]="businness.business_site_twitter" target="_blank"><i class="fa fa-twitter-square" style="font-size:24px;color:green"></i></a></td>
+                    <td *ngIf="businness.business_site_twitter == 'NONE'" ><i class="fa fa-twitter-square" style="font-size:24px;color:red"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Linkedin</td>
+                    <td *ngIf="businness.business_site_linkedin != 'NONE'" ><a [attr.href]="businness.business_site_linkedin" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;color:green"></i></a></td>
+                    <td *ngIf="businness.business_site_linkedin == 'NONE'" ><i class="fa fa-linkedin-square" style="font-size:24px;color:red"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mr1 ml1 row my-3">
+        <div class="col-md-12">
+          <div class="card mb-4 box-shadow">
+            <div class="card-body">
+              <iframe id="iframeee" width="100%" height="2000px">
+                  alternative content for browsers which do not support iframe.
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="my-3 py-3">
+        </div>
+
+
+        <button type="button" (click)="approve(businness.business_original_crn)" class="btn btn-success btn-circle">
+          <div style="font-size:3em;">
+            <i class="icongreen fa fa-check-circle"></i>
+          </div>
+        </button>
+
+        <button type="button" (click)="not_approve(businness.business_original_crn)" class="btn btn-circle-notValid">
+          <div style="font-size:3em;">
+            <i class="iconred fa fa-exclamation-circle"></i>
+          </div>
+        </button>
+
+
+      </div>
+    </div>
+      <div id="loader-div" class="test bg-dark text-center text-white overflow-hidden width100">
+        <div id="loader" ></div>
+    </div>
