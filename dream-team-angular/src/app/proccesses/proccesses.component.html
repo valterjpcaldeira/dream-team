@@ -21,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let proc of proccesses">
+      <tr *ngFor="let proc of items | async">
         <th scope="row">{{ proc.codigo }}</th>
         <td *ngIf="proc.state == 1" >
           <i class="fa fa-frown" style="font-size:24px;color:red"></i>

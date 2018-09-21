@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProccessService } from '../proccess.service';
-import { Proccess } from '../proccess';
+import { Proccess } from './proccess';
 import * as $ from 'jquery';
+import { PROCS } from './mock-ps';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-proccesses',
@@ -9,24 +11,17 @@ import * as $ from 'jquery';
   styleUrls: ['./proccesses.component.css']
 })
 
-export class ProccessesComponent implements OnInit {
+export class ProccessesComponent {
 
   //procs = Proccess[];
-  proccesses = []
 
-  constructor(private proccessService: ProccessService) { }
-
-  ngOnInit() {
-    this.getProccesses();
+  private itemsCollection: AngularFirestoreCollection<Proccess>;
+  items: Observable<Proccess[]>;
+  constructor(private afs: AngularFirestore) {
+    console.log('FUCK');
+    this.itemsCollection = afs.collection<Proccess>('buses');
+    console.log(this.itemsCollection);
+    this.items = this.itemsCollection.valueChanges();
+    console.log(this.items);
   }
-
-  getProccesses(): void {
-    this.proccessService.getProccesses()
-      .subscribe(proccesses => this.proccesses = proccesses);
-  }
-
-  executeProccess(evt): void {
-    this.proccessService.executeProccess(evt)
-  }
-
 }
