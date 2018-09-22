@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proccess } from './proccess';
 import * as $ from 'jquery';
-import { PROCS } from './mock-ps';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 

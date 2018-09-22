@@ -10,14 +10,34 @@
 }
 
 .test {
-    background-color: #FFF1D0!important;
+    background-color: #FFF!important;
 }
 
 .table .thead-dark th {
     color: #fff;
-    background-color: #19BAF2!important;
-    border-color: #19BAF2!important;
+    background-color: #314D95!important;
+    border-color: #314D95!important;
 }
+
+.red-color{
+    background-color: #FFB6B7!important;
+    color: #EE2626!important;
+}
+
+.red{
+    color: #EE2626!important;
+}
+
+.green-color{
+    background-color: #3A9405!important;
+    color: #3A9405!important;
+}
+
+.green{
+    color: #3A9405!important;
+}
+
+
 
 tr{
   color: #000;
