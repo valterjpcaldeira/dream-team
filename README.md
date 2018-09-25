@@ -1,4 +1,4 @@
-# Bust Track Real Time
+# Bus Tracker in Real Time
 
 The most awesome portal to track transports transit in real time! :bowtie: :bus:
 
