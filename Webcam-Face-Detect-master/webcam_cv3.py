@@ -9,8 +9,8 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 # Use a service account
-#cred = credentials.Certificate('C:/Users/Badoo/Desktop/Innovalab/dream-team-9b569-firebase-adminsdk-ej5ec-ee8595ac37.json')
-#firebase_admin.initialize_app(cred)
+cred = credentials.Certificate('D:/dream-team-9b569-firebase-adminsdk-ej5ec-726cdfac76.json')
+firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
@@ -27,7 +27,7 @@ def sendToFirabse():
     
 
 
-cascPath = "C:/Users/Badoo/Desktop/Innovalab/Webcam-Face-Detect-master/haarcascade_frontalface_default.xml"
+cascPath = "D:/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 log.basicConfig(filename='webcam.log',level=log.INFO)
 
