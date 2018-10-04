@@ -17,9 +17,6 @@ db = firestore.client()
 
 def sendToFirabse():
 
-
-    
-    
     doc_ref = db.collection(u'buses').document(u'JMQIwQaezwF5YThrzHRf')
     dick = doc_ref.get().to_dict()
     dick['num_pessoas'] = dick['num_pessoas']+1
